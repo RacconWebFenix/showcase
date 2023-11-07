@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "test": "npm run jest --watchAll"
+    "test": "npm run jest --watchAll",
+    "prepare": "husky install",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -32,8 +34,12 @@
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "8.53.0",
     "eslint-config-next": "^14.0.1",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "3.0.3",
     "typescript": "5.2.2"
   }
 }
