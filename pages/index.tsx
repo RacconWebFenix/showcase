@@ -1,8 +1,6 @@
-import React from "react";
-
-function index() {
+export default function Home() {
   const oi: string = "Teste de Typescipt";
+
+  console.log(oi);
   return <div>{oi}</div>;
 }
-
-export default index;
