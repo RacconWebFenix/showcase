@@ -1,6 +1,9 @@
 export default function Home() {
-  const oi: string = 'Teste de Typescipt'
-
-  console.log(oi)
-  return <div>{oi}</div>
+  const oi: string =
+    'Heim....falta a Karoline fazer o Style Guide pa nois :) hihihi'
+  return (
+    <div>
+      <h1>{oi}</h1>
+    </div>
+  )
 }
