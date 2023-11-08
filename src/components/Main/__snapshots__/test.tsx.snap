@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Main /> should render the Heading 1`] = `
-<main>
+<main
+  class="sc-bdfCDU esWOmd"
+>
   <h1>
-    Hello World
+    Showcase Marcos Domingues
   </h1>
 </main>
 `;

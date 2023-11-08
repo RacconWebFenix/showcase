@@ -1,9 +1,11 @@
+import Main from '../src/components/Main'
+
 export default function Home() {
-  const oi: string =
-    'Heim....falta a Karoline fazer o Style Guide pa nois :) hihihi'
   return (
     <div>
-      <h1>{oi}</h1>
+      <h1>
+        <Main />
+      </h1>
     </div>
   )
 }

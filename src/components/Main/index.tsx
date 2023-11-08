@@ -1,7 +1,9 @@
+import * as S from './styles'
+
 const Main = () => (
-  <main>
-    <h1>Hello World</h1>
-  </main>
+  <S.Wrapper>
+    <h1>Showcase Marcos Domingues</h1>
+  </S.Wrapper>
 )
 
 export default Main
