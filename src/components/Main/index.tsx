@@ -1,8 +1,8 @@
 import * as S from './styles'
 
-const Main = () => (
+const Main = ({ title = 'Showcase Marcos Domingues' }: { title: string }) => (
   <S.Wrapper>
-    <h1>Showcase Marcos Domingues</h1>
+    <h1>{title}</h1>
   </S.Wrapper>
 )
 
