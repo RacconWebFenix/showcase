@@ -1,3 +1,4 @@
+import Providers from './providers'
 import StyledComponentsRegistry from '../src/lib/registry'
 
 export default function RootLayout({
@@ -6,9 +7,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html>
+    <html lang="en">
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Providers>{children}</Providers>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )
