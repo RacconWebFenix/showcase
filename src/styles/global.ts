@@ -1,27 +1,52 @@
 'use client'
 
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+    @font-face {
+      font-display: swap;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/fonts/montserrat-v26-latin-regular.woff2') format('woff2'),
+          url('/fonts/montserrat-v26-latin-regular.ttf') format('truetype');
+    }
 
-    *{
+    @font-face {
+      font-display: swap;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      src: url('/fonts/montserrat-v26-latin-500.woff2') format('woff2'),
+          url('/fonts/montserrat-v26-latin-500.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      src: url('/fonts/montserrat-v26-latin-600.woff2') format('woff2'),
+          url('/fonts/montserrat-v26-latin-600.ttf') format('truetype');
+    }
+
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-
-    html {
+    ${({ theme }) => css`
+      html {
         font-size: 62.5%;
-    }
+      }
 
-    html, body, #__next {
-        height: 100vh;
-    }
-
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-    }
+      body {
+        font-family: ${theme.font.family};
+        font-size: ${theme.font.sizes.medium};
+      }
+    `}
 
 `
 
