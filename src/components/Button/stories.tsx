@@ -6,4 +6,8 @@ export default {
   component: Button
 } as Meta
 
-export const Default: StoryObj = {}
+export const Default: StoryObj = {
+  args: {
+    children: 'Ver Cases'
+  }
+}

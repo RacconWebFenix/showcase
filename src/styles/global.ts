@@ -4,30 +4,28 @@ import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
     @font-face {
-      font-display: swap;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 400;
-      src: url('/fonts/montserrat-v26-latin-regular.woff2') format('woff2'),
-          url('/fonts/montserrat-v26-latin-regular.ttf') format('truetype');
+      font-display: swap;
+      src: local('Montserrat'),
+      url('/fonts/montserrat-v26-latin-regular.woff2') format('woff2')
     }
 
     @font-face {
-      font-display: swap;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 500;
-      src: url('/fonts/montserrat-v26-latin-500.woff2') format('woff2'),
-          url('/fonts/montserrat-v26-latin-500.ttf') format('truetype');
+      font-display: swap;
+      src: local('Montserrat'), url('/fonts/montserrat-v26-latin-500.woff2') format('woff2')
     }
 
     @font-face {
-      font-display: swap;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 600;
-      src: url('/fonts/montserrat-v26-latin-600.woff2') format('woff2'),
-          url('/fonts/montserrat-v26-latin-600.ttf') format('truetype');
+      font-display: swap;
+      src: local('Montserrat'), url('/fonts/montserrat-v26-latin-600.woff2') format('woff2')
     }
 
     * {
@@ -36,18 +34,19 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-    }
-    ${({ theme }) => css`
-      html {
-        font-size: 62.5%;
+        ${({ theme }) => css`
+          font-family: ${theme.font.family};
+        `}
       }
 
-      body {
-        font-family: ${theme.font.family};
-        font-size: ${theme.font.sizes.medium};
-      }
-    `}
+      ${({ theme }) => css`
+        html {
+          font-size: 62.5%;
+        }
 
+        body {
+          font-size: ${theme.font.sizes.medium};
+        }
+      `}
 `
-
 export default GlobalStyles
