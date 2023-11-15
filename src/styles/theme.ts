@@ -26,6 +26,7 @@ export default {
   colors: {
     primary: '#FBD968',
     secondary: '#C9FDC6',
+    hovered: '#F8D048',
     mainBg: '#333333',
     white: '#FAFAFA',
     black: '#030517',

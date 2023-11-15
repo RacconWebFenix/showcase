@@ -1,12 +1,15 @@
 import * as S from './styles'
 
-export type ButtonProps = {
+export type ButtonTypes = {
+  size?: 'small' | 'medium' | 'large'
   children: React.ReactNode
   variant?: 'primary' | 'secondary'
 }
 
-const Button = ({ variant, children }: ButtonProps) => (
-  <S.Wrapper variant={variant}>{children}</S.Wrapper>
+const Button = ({ variant, children, size = 'medium' }: ButtonTypes) => (
+  <S.Wrapper variant={variant} size={size}>
+    {children}
+  </S.Wrapper>
 )
 
 export default Button

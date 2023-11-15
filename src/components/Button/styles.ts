@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
-import { ButtonProps } from '.'
+import { ButtonTypes } from '.'
 
-export const Wrapper = styled.button<ButtonProps>`
+export const Wrapper = styled.button<ButtonTypes>`
   ${({ theme }) => css`
     background: ${theme.colors.primary};
     padding: ${theme.spacings.xsmall} ${theme.spacings.medium};
@@ -15,5 +15,15 @@ export const Wrapper = styled.button<ButtonProps>`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: all ease 0.2s;
+
+    &:hover {
+      background: ${theme.colors.hovered};
+      box-shadow: 10px 10px 5px 0px #000000;
+    }
+
+    &:active {
+      box-shadow: 5px 5px 10px 1px #000000;
+    }
   `}
 `

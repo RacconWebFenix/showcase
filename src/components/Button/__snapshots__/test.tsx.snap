@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render a button and with variant primary 1`] = `
+.c0 {
+  background: #FBD968;
+  padding: 1.6rem 3.2rem;
+  border: 0;
+  cursor: pointer;
+  color: #333333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-decoration: none;
+  line-height: 2.0rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.2s;
+}
+
+.c0:hover {
+  background: #F8D048;
+  box-shadow: 10px 10px 5px 0px #000000;
+}
+
+.c0:active {
+  box-shadow: 5px 5px 10px 1px #000000;
+}
+
+<div>
+  <button
+    class="c0"
+    variant="primary"
+  >
+    Ver Cases
+  </button>
+</div>
+`;
