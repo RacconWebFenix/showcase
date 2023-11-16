@@ -6,7 +6,11 @@ export type ButtonTypes = {
   variant?: 'primary' | 'secondary'
 }
 
-const Button = ({ variant, children, size = 'medium' }: ButtonTypes) => (
+const Button = ({
+  variant = 'primary',
+  children,
+  size = 'medium'
+}: ButtonTypes) => (
   <S.Wrapper variant={variant} size={size}>
     {children}
   </S.Wrapper>
