@@ -1,48 +1,51 @@
-import styled, { css } from 'styled-components'
+import styled, { DefaultTheme, css } from 'styled-components'
 import { ButtonTypes } from '.'
 
 const wrapperModifiers = {
-  primary: () => css`
-    ${({ theme }) => css`
-      background: ${theme.colors.primary};
-      color: ${theme.colors.mainBg};
+  primary: (theme: DefaultTheme) => css`
+    background: ${theme.colors.primary};
+    color: ${theme.colors.mainBg};
+    border: 0;
+  `,
+  secondary: (theme: DefaultTheme) => css`
+    background-color: transparent;
+    color: ${theme.colors.primary};
+    border: 1px solid ${theme.colors.primary};
+    &:hover {
       border: 0;
-    `}
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.mainBg};
+    }
   `,
-  secondary: () => css`
-    ${({ theme }) => css`
-      background-color: transparent;
-      color: ${theme.colors.primary};
-      border: 1px solid ${theme.colors.primary};
-      &:hover {
-        border: 0;
-        background-color: ${theme.colors.primary};
-        color: ${theme.colors.mainBg};
-      }
-    `}
+  small: (theme: DefaultTheme) => css`
+    height: ${theme.spacings.medium};
+    font-size: ${theme.font.sizes.xsmall};
   `,
-  small: () => css`
-    ${({ theme }) => css`
-      height: ${theme.spacings.medium};
-      font-size: ${theme.font.sizes.xsmall};
-    `}
+  medium: (theme: DefaultTheme) => css`
+    height: ${theme.spacings.xxlarge};
+    font-size: ${theme.font.sizes.large};
   `,
-  medium: () => css`
-    ${({ theme }) => css`
-      height: ${theme.spacings.xxlarge};
-      font-size: ${theme.font.sizes.large};
-    `}
+  large: (theme: DefaultTheme) => css`
+    height: ${theme.spacings.xxlarge};
+    font-size: ${theme.font.sizes.xxlarge};
   `,
-  large: () => css`
-    ${({ theme }) => css`
-      height: ${theme.spacings.xxlarge};
-      font-size: ${theme.font.sizes.xxlarge};
-    `}
+  withIcon: (theme: DefaultTheme) => css`
+    position: fixed;
+    right: ${theme.spacings.small};
+    top: 48.5vh;
+    z-index: ${theme.layers.alwaysOnTop};
+    width: ${theme.spacings.xxlarge};
+    height: ${theme.spacings.xxlarge};
+    padding: 0;
+    margin: 0;
+    svg {
+      height: ${theme.spacings.small};
+    }
   `
 }
 
 export const Wrapper = styled.button<ButtonTypes>`
-  ${({ theme, size, variant }) => css`
+  ${({ theme, size, variant, sharedicon }) => css`
     padding: ${theme.spacings.xsmall} ${theme.spacings.medium};
     width: 25rem;
     cursor: pointer;
@@ -63,7 +66,8 @@ export const Wrapper = styled.button<ButtonTypes>`
       box-shadow: 5px 5px 10px 1px #000000;
     }
 
-    ${variant && wrapperModifiers[variant]}
-    ${size && wrapperModifiers[size]}
+    ${variant && wrapperModifiers[variant](theme)}
+    ${size && wrapperModifiers[size](theme)}
+    ${sharedicon && wrapperModifiers.withIcon(theme)}
   `}
 `

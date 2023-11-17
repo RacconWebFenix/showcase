@@ -1,4 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { Share } from '@styled-icons/bootstrap/Share'
+
 import Button from '.'
 
 export default {
@@ -6,8 +8,15 @@ export default {
   component: Button
 } as Meta
 
-export const Default: StoryObj = {
+export const Template: StoryObj = {
   args: {
     children: 'Ver Cases'
+  }
+}
+
+export const SharedIcon: StoryObj = {
+  args: {
+    children: '',
+    sharedicon: <Share />
   }
 }
